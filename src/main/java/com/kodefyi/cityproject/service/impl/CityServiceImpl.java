@@ -30,4 +30,12 @@ public class CityServiceImpl implements CityService {
 		return sorted_city;
 	}
 
+	@Override
+	public List<City> getCityDataWithPincodeRange(long start, long end) {
+		// TODO Auto-generated method stub
+		List<City> sorted_city = cityRepository.findAll().stream()
+				.filter(x -> x.getPincode() >= start && x.getPincode() <= end).sorted(new CityName()).toList();
+		return sorted_city;
+	}
+
 }

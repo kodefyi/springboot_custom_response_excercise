@@ -28,7 +28,7 @@ public class CityController {
 		return cityService.addCity(city);
 	}
 
-	@GetMapping("/getcityswithpincode")
+	@GetMapping("/getcitywithpincode")
 	public ResponseEntity<Object> getCityWithPincode(@RequestParam long startpostcoderange,
 			@RequestParam long endpostcoderange) {
 		List<City> data = cityService.getCityWithPincodeRange(startpostcoderange, endpostcoderange);
@@ -39,6 +39,14 @@ public class CityController {
 		}
 
 		return ResponseHandler.generateResponse("Successfully retrieved data!", HttpStatus.OK, data, str.length());
+	}
+	
+	@GetMapping("/getcitydatawithpincode")
+	public List<City> getCityDataWithPincode(@RequestParam long startpostcoderange,
+			@RequestParam long endpostcoderange) {
+		List<City> data = cityService.getCityDataWithPincodeRange(startpostcoderange, endpostcoderange);
+
+		return data;
 	}
 
 }

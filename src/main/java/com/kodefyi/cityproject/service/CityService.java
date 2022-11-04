@@ -12,4 +12,6 @@ public interface CityService {
 	List<City> addCity(List<City> city);
 
 	List<City> getCityWithPincodeRange(long start, long end);
+	
+	List<City> getCityDataWithPincodeRange(long start, long end);
 }
