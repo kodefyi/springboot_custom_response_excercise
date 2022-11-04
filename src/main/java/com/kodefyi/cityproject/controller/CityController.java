@@ -29,7 +29,7 @@ public class CityController {
 	}
 
 	@GetMapping("/getcityswithpincode")
-	public ResponseEntity<Object> getSuburbWithPostcode(@RequestParam long startpostcoderange,
+	public ResponseEntity<Object> getCityWithPincode(@RequestParam long startpostcoderange,
 			@RequestParam long endpostcoderange) {
 		List<City> data = cityService.getCityWithPincodeRange(startpostcoderange, endpostcoderange);
 
